@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한덕환 | small N잡러 온라인 명함</title>
+    <style>
+        /* 전체 기본 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        /* 모바일 화면 너비에 맞춘 중앙 정렬 컨테이너 */
+        .wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        /* 페이지 상단을 덮는 숲 배경 배너 */
+        .top-banner {
+            width: 100%;
+            height: 180px;
+            background-image: url('forest_bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 본문 영역 */
+        .content-area {
+            padding: 0 20px 40px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* 숲 배경 위로 걸쳐지는 둥근 프로필 사진 */
+        .profile-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-top: -100px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            background-color: #ffffff;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 이름 및 직업 영역 */
+        .name-section {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .small-job {
+            font-size: 1rem;
+            color: #333333;
+        }
+        .name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1F3864;
+        }
+        .job-titles {
+            font-size: 1rem;
+            color: #333333;
+            margin-bottom: 25px;
+        }
+
+        /* 슬로건 및 경력 목록 */
+        .slogan {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1F3864;
+            margin-bottom: 25px;
+        }
+        .career-list {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .career-item span.status {
+            font-weight: bold;
+            color: #1F3864;
+            margin-right: 8px;
+        }
+
+        /* 전직 영역 */
+        .old-slogan {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1F3864;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+        .old-career {
+            font-size: 0.95rem;
+            margin-bottom: 50px;
+        }
+
+        /* 링크 버튼 영역 */
+        .link-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 440px;
+            padding: 18px 24px;
+            margin-bottom: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333333;
+            font-weight: 600;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+        .arrow {
+            color: #333333;
+            font-weight: bold;
+        }
+        
+        /* 💡 수정된 이메일 소통 버튼 스타일 */
+        .link-button.email-btn {
+            border: none;
+            justify-content: center;
+            color: #777777; /* 글자 색상을 조금 더 또렷하게 수정 */
+            margin-top: 15px;
+            font-weight: normal;
+            font-size: 0.9rem;
+            flex-direction: column; /* 위아래 두 줄로 나오도록 설정 */
+            gap: 4px;
+        }
+        .email-address {
+            font-size: 0.85rem;
+            color: #999999;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-banner"></div>
+        
+        <div class="content-area">
+            <div class="profile-container">
+                <img src="myphoto.png" alt="한덕환 프로필">
+            </div>
+
+            <div class="name-section">
+                <span class="small-job">small N잡러</span>
+                <span class="name">한덕환</span>
+            </div>
+            <div class="job-titles">유튜브작가/Ai컨설턴트/길여행가/프리랜서강사</div>
+
+            <div class="slogan">《이제는.좋아하는 것만 하는 사람》</div>
+            <div class="career-list">
+                <div class="career-item"><span class="status">현.</span> 유튜브작가/@혼자걷다보면 [2025 서울 인플루언서 100인]</div>
+                <div class="career-item"><span class="status">현.</span> 전문강사(서울시/기업/공기관)</div>
+                <div class="career-item"><span class="status">현.</span> 길여행강사(길해설가1급)</div>
+                <div class="career-item"><span class="status">현.</span> AI컨설턴트</div>
+                <div class="career-item"><span class="status">현.</span> 브런치작가/투빈대디</div>
+                <div class="career-item"><span class="status">전.</span> 국립공원안전산행지원단</div>
+                <div class="career-item"><span class="status">전.</span> 구로구청 청년일자리 멘토</div>
+                <div class="career-item"><span class="status">전.</span> 소상공인 온라인홍보마케터</div>
+            </div>
+
+            <div class="old-slogan">《그전엔.직장인 30년》</div>
+            <div class="old-career">큰기업근무 15년. 작은기업경영 15년</div>
+
+            <a href="https://youtube.com/@혼자걷다보면" class="link-button" target="_blank">
+                유튜브@혼자걷다보면 <span class="arrow">→</span>
+            </a>
+            <a href="https://brunch.co.kr/@2beendaddy" class="link-button" target="_blank">
+                브런치(투빈대디) <span class="arrow">→</span>
+            </a>
+            
+            <a href="mailto:hanmokhae@gmail.com" class="link-button email-btn">
+                <span>이메일 소통</span>
+                <span class="email-address">hanmokhae@gmail.com</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
