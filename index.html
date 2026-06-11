@@ -140,9 +140,18 @@
             width: 100%;
         }
 
-        /* 7. 기능성 버튼 영역 */
-        .button-group {
+        /* 7. 기능성 버튼 및 QR코드 가로 정렬 배치 영역 */
+        .bottom-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             width: 100%;
+            max-width: 360px;
+            gap: 12px;
+        }
+
+        .button-group {
+            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 8px; /* 기존 12px에서 8px로 축소 */
@@ -161,6 +170,9 @@
             font-weight: normal; /* 보통 글씨체로 변경됨 */
             box-sizing: border-box;
             transition: all 0.2s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* 버튼 터치/마우스오버 시 색상 반전 효과 */
@@ -168,27 +180,37 @@
             background-color: var(--text-gray);
             color: var(--bg-white);
         }
+
+        .qr-box {
+            flex-shrink: 0;
+        }
+
+        .qr-box img {
+            width: 90px; /* 가로 배치에 적합하도록 크기 최적화 */
+            height: 90px;
+            border-radius: 12px;
+            padding: 5px;
+            border: 1px solid var(--text-gray);
+            background-color: var(--bg-white);
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <!-- 상단 숲 배경 -->
         <div class="top-bg"></div>
         
         <div class="content">
-            <!-- 프로필 사진 -->
             <div class="profile-wrap">
                 <img src="my-photo-bnw.png" alt="한덕환 프로필 사진">
             </div>
 
-            <!-- 이름 및 직책 -->
             <div class="name-box">
                 <span class="title-small">small N잡러</span>
                 <span class="title-name">한덕환</span>
             </div>
-            <div class="job-list">유튜브작가/Ai컨설터트/길여행가/전문강사</div>
+            <div class="job-list">유튜브작가/Ai컨설터트/길여행가/프리랜서강사</div>
 
-            <!-- 현직 슬로건 및 경력 -->
             <div class="slogan-current">《이제는.좋아하는 것만 하는 사람》</div>
             <div class="career-box">
                 <div class="career-item">현.유튜브작가/@혼자걷다보면</div>
@@ -202,31 +224,31 @@
                 <div class="career-item">전.소상공인 온라인홍보마케터</div>
             </div>
 
-            <!-- 전직 슬로건 및 경력 -->
             <div class="slogan-past">《그전엔.직장인 30년》</div>
             <div class="past-career">큰기업근무 15년. 작은기업경영 15년</div>
 
-            <!-- 4개의 액션 버튼 -->
-            <div class="button-group">
-                <!-- 유튜브 링크 -->
-                <a href="https://youtube.com/@혼자걷다보면" target="_blank" class="btn-link">
-                    유튜브@혼자걷다보면
-                </a>
-                
-                <!-- 브런치 링크 -->
-                <a href="https://brunch.co.kr/@2beendaddy" target="_blank" class="btn-link">
-                    브런치(투빈대디)
-                </a>
-                
-                <!-- 전화 걸기 버튼 -->
-                <a href="tel:010-3280-4309" class="btn-link">
-                    전화 걸기: 010-3280-4309
-                </a>
-                
-                <!-- 이메일 보내기 버튼 -->
-                <a href="mailto:hanmokhae@gmail.com" class="btn-link">
-                    이메일 소통: hanmokhae@gmail.com
-                </a>
+            <div class="bottom-container">
+                <div class="button-group">
+                    <a href="https://youtube.com/@혼자걷다보면" target="_blank" class="btn-link">
+                        유튜브@혼자걷다보면
+                    </a>
+                    
+                    <a href="https://brunch.co.kr/@2beendaddy" target="_blank" class="btn-link">
+                        브런치(투빈대디)
+                    </a>
+                    
+                    <a href="tel:010-3280-4309" class="btn-link">
+                        전화 걸기: 010-3280-4309
+                    </a>
+                    
+                    <a href="mailto:hanmokhae@gmail.com" class="btn-link">
+                        이메일 소통: hanmokhae@gmail.com
+                    </a>
+                </div>
+
+                <div class="qr-box">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://m.site.naver.com/2acY5" alt="한덕환 명함 QR코드">
+                </div>
             </div>
         </div>
     </div>
