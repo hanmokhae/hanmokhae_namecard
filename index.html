@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>한덕환 | small N잡러 온라인 명함</title>
     <style>
+        /* 프리텐다드 웹 폰트 불러오기 (모든 기기에서 동일한 폰트 출력) */
+        @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
         /* 1. 기본 설정 (지정된 3가지 색상만 사용: 흰색, 짙은 회색, 네이비) */
         :root {
             --bg-white: #ffffff;
@@ -79,7 +82,7 @@
         }
 
         .title-small {
-            font-size: 1rem;
+            font-size: 1.5rem; /* 기존 1rem에서 1.5배(1.5rem)로 확대 */
             color: var(--text-gray);
         }
 
@@ -113,7 +116,8 @@
         }
 
         .career-item {
-            margin-bottom: 5px;
+            margin-bottom: 3px; /* 기존 5px에서 약 2/3 수준(3px)으로 축소 */
+            line-height: 1.3; /* 텍스트 자체의 줄간격도 함께 축소 */
             word-break: keep-all; /* 단어 단위로 줄바꿈 */
         }
 
@@ -147,7 +151,7 @@
         .btn-link {
             display: block;
             width: 100%;
-            padding: 12px; /* 기존 16px에서 12px로 축소 */
+            padding: 6px; /* 기존 12px에서 1/2 수준(6px)으로 축소 */
             border-radius: 12px; /* 둥근 모서리 */
             background-color: var(--bg-white);
             color: var(--text-gray);
@@ -182,7 +186,7 @@
                 <span class="title-small">small N잡러</span>
                 <span class="title-name">한덕환</span>
             </div>
-            <div class="job-list">유튜브작가/Ai컨설터트/길여행가/프리랜서강사</div>
+            <div class="job-list">유튜브작가/Ai컨설터트/길여행가/전문강사</div>
 
             <!-- 현직 슬로건 및 경력 -->
             <div class="slogan-current">《이제는.좋아하는 것만 하는 사람》</div>
