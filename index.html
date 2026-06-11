@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한덕환 | small N잡러 온라인 명함</title>
+    <style>
+        /* 1. 기본 설정 (지정된 3가지 색상만 사용: 흰색, 짙은 회색, 네이비) */
+        :root {
+            --bg-white: #ffffff;
+            --text-gray: #333333;
+            --point-navy: #1F3864;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        
+        /* 모바일 화면에 최적화된 중앙 정렬 컨테이너 */
+        .wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            position: relative;
+            padding-bottom: 50px;
+        }
+
+        /* 2. 상단 숲 배경 (화면 상부 약 25% 비율 차지) */
+        .top-bg {
+            width: 100%;
+            height: 220px;
+            background-image: url('forest_bg.png'); /* 배경 사진 파일명 */
+            background-size: cover;
+            background-position: center;
+            background-color: var(--text-gray); /* 이미지 로드 전 대체 색상 */
+        }
+
+        /* 본문 전체 영역 */
+        .content {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* 3. 원형 프로필 사진 (배경 안으로 완전히 들어가게 하단 선 맞춤) */
+        .profile-wrap {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin-top: -148px; /* 위로 사진 전체 높이(140) + 테두리(8) 만큼 끌어올려 하단 수평을 맞춤 */
+            margin-bottom: 20px;
+            background-color: var(--bg-white);
+            border: 4px solid var(--bg-white);
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 4. 이름 및 직업 영역 */
+        .name-box {
+            display: flex;
+            align-items: baseline; /* 글자 아래 선 맞춤 */
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .title-small {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+
+        .title-name {
+            font-size: 2rem; /* 본문의 2배 크기 */
+            font-weight: 800;
+            color: var(--text-gray);
+        }
+
+        .job-list {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        /* 5. 경력 영역 (현직) */
+        .slogan-current {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--point-navy); /* 네이비색 강조 */
+            margin-bottom: 15px;
+        }
+
+        .career-box {
+            text-align: left; /* 경력 리스트는 좌측 정렬로 깔끔하게 */
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .career-item {
+            margin-bottom: 5px;
+            word-break: keep-all; /* 단어 단위로 줄바꿈 */
+        }
+
+        /* 6. 경력 영역 (전직) */
+        .slogan-past {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--point-navy); /* 네이비색 강조 */
+            margin-top: 10px; /* 상단 여백을 기존 15px에서 10px(2/3)로 축소 */
+            margin-bottom: 10px;
+            text-align: center; /* 가운데 정렬 명시 */
+            width: 100%;
+        }
+
+        .past-career {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            text-align: center; /* 가운데 정렬 명시 */
+            width: 100%;
+        }
+
+        /* 7. 기능성 버튼 영역 */
+        .button-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px; /* 기존 12px에서 8px로 축소 */
+        }
+
+        .btn-link {
+            display: block;
+            width: 100%;
+            padding: 12px; /* 기존 16px에서 12px로 축소 */
+            border-radius: 12px; /* 둥근 모서리 */
+            background-color: var(--bg-white);
+            color: var(--text-gray);
+            border: 1px solid var(--text-gray); /* 짙은 회색 테두리 */
+            text-decoration: none;
+            font-size: 0.875rem; /* 기존 1rem에서 0.875rem으로 축소 */
+            font-weight: normal; /* 보통 글씨체로 변경됨 */
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        /* 버튼 터치/마우스오버 시 색상 반전 효과 */
+        .btn-link:active, .btn-link:hover {
+            background-color: var(--text-gray);
+            color: var(--bg-white);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 상단 숲 배경 -->
+        <div class="top-bg"></div>
+        
+        <div class="content">
+            <!-- 프로필 사진 -->
+            <div class="profile-wrap">
+                <img src="my-photo-bnw.png" alt="한덕환 프로필 사진">
+            </div>
+
+            <!-- 이름 및 직책 -->
+            <div class="name-box">
+                <span class="title-small">small N잡러</span>
+                <span class="title-name">한덕환</span>
+            </div>
+            <div class="job-list">유튜브작가/Ai컨설터트/길여행가/프리랜서강사</div>
+
+            <!-- 현직 슬로건 및 경력 -->
+            <div class="slogan-current">《이제는.좋아하는 것만 하는 사람》</div>
+            <div class="career-box">
+                <div class="career-item">현.유튜브작가/@혼자걷다보면</div>
+                <div class="career-item">&nbsp;&nbsp;&nbsp;[2025 서울인플루언서100인]</div>
+                <div class="career-item">현.전문강사(서울시/기업/공기관)</div>
+                <div class="career-item">현.길여행강사(길해설가1급)</div>
+                <div class="career-item">현.Ai컨설턴트</div>
+                <div class="career-item">현.브런치작가/투빈대디</div>
+                <div class="career-item">전.국립공원안전산행지원단</div>
+                <div class="career-item">전.구로구청 청년일자리 멘토</div>
+                <div class="career-item">전.소상공인 온라인홍보마케터</div>
+            </div>
+
+            <!-- 전직 슬로건 및 경력 -->
+            <div class="slogan-past">《그전엔.직장인 30년》</div>
+            <div class="past-career">큰기업근무 15년. 작은기업경영 15년</div>
+
+            <!-- 4개의 액션 버튼 -->
+            <div class="button-group">
+                <!-- 유튜브 링크 -->
+                <a href="https://youtube.com/@혼자걷다보면" target="_blank" class="btn-link">
+                    유튜브@혼자걷다보면
+                </a>
+                
+                <!-- 브런치 링크 -->
+                <a href="https://brunch.co.kr/@2beendaddy" target="_blank" class="btn-link">
+                    브런치(투빈대디)
+                </a>
+                
+                <!-- 전화 걸기 버튼 -->
+                <a href="tel:010-3280-4309" class="btn-link">
+                    전화 걸기: 010-3280-4309
+                </a>
+                
+                <!-- 이메일 보내기 버튼 -->
+                <a href="mailto:hanmokhae@gmail.com" class="btn-link">
+                    이메일 소통: hanmokhae@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
